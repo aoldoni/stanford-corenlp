@@ -22,7 +22,9 @@ public class RothEntityExtractor extends BasicEntityExtractor {
     entityTagForNer.put("person", "PEOPLE");
     entityTagForNer.put("organization", "ORGANIZATION");
     entityTagForNer.put("location", "LOCATION");
-    
+    entityTagForNer.put("concept", "CONCEPT");
+    entityTagForNer.put("entity", "ENTITY");
+    entityTagForNer.put("paper", "PAPER");
   }
   
   @Override

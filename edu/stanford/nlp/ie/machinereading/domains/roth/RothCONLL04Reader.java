@@ -70,6 +70,12 @@ public class RothCONLL04Reader extends GenericDataSetReader {
       return "ORGANIZATION";
     else if(ner.equalsIgnoreCase("Other"))
       return "OTHER";
+    else if(ner.equalsIgnoreCase("Concept"))
+      return "CONCEPT";
+    else if(ner.equalsIgnoreCase("Entity"))
+      return "ENTITY";
+    else if(ner.equalsIgnoreCase("Paper"))
+      return "PAPER";
     throw new RuntimeException("Cannot normalize ner tag " + ner);
   }
 
