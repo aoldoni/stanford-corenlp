@@ -7,7 +7,7 @@ More details are in http://nlp.stanford.edu/software/relationExtractor.html
 
 #FAQ
 
-#### Why you modified CoreNLP
+#### Why you modified CoreNLP?
 
 Please note the following classes inside this repository:
     `edu/stanford/nlp/ie/machinereading/domains/roth/RothCONLL04Reader.java`
@@ -28,7 +28,7 @@ extracting information from academic papers as to build knowledge graphs.
 More info coming soon!
 
 
-#### Why this is not a fork
+#### Why this is not a fork?
 
 Note this repository contains the source code for the 3.6.0 release of the CoreNLP. Moreover, it's unclear from the
 commits in https://github.com/stanfordnlp/CoreNLP what is the version in there
@@ -42,6 +42,6 @@ distribution.
 Please check https://github.com/stanfordnlp/CoreNLP#build-instructions
 
 
-#### License
+# License
 
 LICENSE as per https://github.com/stanfordnlp/CoreNLP/blob/master/LICENSE.txt
