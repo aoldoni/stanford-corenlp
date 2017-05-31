@@ -1,11 +1,13 @@
 # Stanford CoreNLP
 
+This repository modifies Stanford CoreNLP as to allow Relation Extractor training with custom NER entities.
+
 The default Relation Extractor classes that are compatible with training data formatted in the same
 way as Roth and Yih's data, as per the format described in http://cogcomp.cs.illinois.edu/page/resource_view/43.
 
 More details are in http://nlp.stanford.edu/software/relationExtractor.html
 
-#FAQ
+# FAQ
 
 #### Why you modified CoreNLP?
 
@@ -19,13 +21,15 @@ as per the issue described in here: https://github.com/stanfordnlp/CoreNLP/issue
 This repository simply adds other entities I needed for my research on Information/Relation Extraction
 from academic papers.
 
+I created a new parameter `possibleEntities` that can be used to send a list of entities for training. For a usage example, see [here](https://github.com/aoldoni/tetre/blob/develop/config/relation.properties) and [here](https://github.com/aoldoni/stanford-corenlp/issues/1).
+
 
 #### What is your research?
 
 With Dr. Wei Wang from UNSW as my supervisor, I built an Information Extraction tool, focused in
 extracting information from academic papers as to build knowledge graphs.
 
-More info coming soon!
+You can find it in this link: https://github.com/aoldoni/tetre/
 
 
 #### Why this is not a fork?
