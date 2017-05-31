@@ -230,6 +230,9 @@ public class MachineReading {
     if (auxReader != null) {
       auxReader.setProcessor(pipe);
     }
+
+    // Parse entities for normalization
+    MachineReadingProperties.nerTagNormalizer = new NerTagNormalizer(MachineReadingProperties.possibleEntities);
     
     // create the results printers
     mr.makeResultsPrinters(args);

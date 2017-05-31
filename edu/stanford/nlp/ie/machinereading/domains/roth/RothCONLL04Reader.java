@@ -10,6 +10,8 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import edu.stanford.nlp.ie.machinereading.MachineReadingProperties;
+
 import edu.stanford.nlp.ie.machinereading.GenericDataSetReader;
 import edu.stanford.nlp.ie.machinereading.structure.AnnotationUtils;
 import edu.stanford.nlp.ie.machinereading.structure.EntityMention;
@@ -60,6 +62,7 @@ public class RothCONLL04Reader extends GenericDataSetReader {
 
 
   private static String getNormalizedNERTag(String ner){
+
     if(ner.equalsIgnoreCase("O"))
       return "O";
     else if(ner.equalsIgnoreCase("Peop"))
@@ -70,12 +73,13 @@ public class RothCONLL04Reader extends GenericDataSetReader {
       return "ORGANIZATION";
     else if(ner.equalsIgnoreCase("Other"))
       return "OTHER";
-    else if(ner.equalsIgnoreCase("Concept"))
-      return "CONCEPT";
-    else if(ner.equalsIgnoreCase("Entity"))
-      return "ENTITY";
-    else if(ner.equalsIgnoreCase("Paper"))
-      return "PAPER";
+
+    // Normalize via configuration:
+    String normalisedTag = MachineReadingProperties.nerTagNormalizer.getNormalisedTag(ner);
+
+    if (!normalisedTag.equals(""))
+      return normalisedTag;
+
     throw new RuntimeException("Cannot normalize ner tag " + ner);
   }
 

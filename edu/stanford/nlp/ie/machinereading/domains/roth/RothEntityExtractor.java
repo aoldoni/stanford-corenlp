@@ -3,6 +3,8 @@ package edu.stanford.nlp.ie.machinereading.domains.roth;
 import java.util.HashMap;
 import java.util.Map;
 
+import edu.stanford.nlp.ie.machinereading.MachineReadingProperties;
+
 import edu.stanford.nlp.ie.machinereading.BasicEntityExtractor;
 import edu.stanford.nlp.ie.machinereading.structure.EntityMentionFactory;
 
@@ -15,6 +17,7 @@ public class RothEntityExtractor extends BasicEntityExtractor {
   
   public RothEntityExtractor() {
     super(null, USE_SUB_TYPES, null, true, new EntityMentionFactory(), true);
+
     entityTagForNer = new HashMap<>();
 //    entityTagForNer.put("person", "Peop");
 //    entityTagForNer.put("organization", "Org");
@@ -22,9 +25,8 @@ public class RothEntityExtractor extends BasicEntityExtractor {
     entityTagForNer.put("person", "PEOPLE");
     entityTagForNer.put("organization", "ORGANIZATION");
     entityTagForNer.put("location", "LOCATION");
-    entityTagForNer.put("concept", "CONCEPT");
-    entityTagForNer.put("entity", "ENTITY");
-    entityTagForNer.put("paper", "PAPER");
+
+    MachineReadingProperties.nerTagNormalizer.populateHashmap(entityTagForNer);
   }
   
   @Override

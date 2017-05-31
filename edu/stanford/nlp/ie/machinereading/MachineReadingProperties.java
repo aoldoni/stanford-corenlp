@@ -207,4 +207,12 @@ public class MachineReadingProperties {
 
   @Option(name="L1RegLambda")
   static public double L1RegLambda = 1.0;
+
+  /**
+   * Additional features, may not necessarily be used in the public release
+   */
+  @Option(name="possibleEntities",gloss="comma-separated list of possible entities")
+  static public String possibleEntities = "";
+
+  static public NerTagNormalizer nerTagNormalizer;
 }
